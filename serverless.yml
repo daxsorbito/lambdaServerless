@@ -76,7 +76,7 @@ functions:
 # you can add CloudFormation resource templates here
 resources:
  Resources:
-   CreatedResource:
+   NewResource:
      Type: AWS::S3::Bucket
      Properties:
        BucketName: aws-lambdaserverless-bl-created

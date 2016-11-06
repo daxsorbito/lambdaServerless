@@ -1,0 +1,19 @@
+{
+  "name": "lambdaserverless",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "dependencies": {
+    "aws-sdk": "2.6.15",
+    "bluebird": "3.4.6",
+    "node-uuid": "1.4.7",
+    "request": "2.78.0",
+    "request-promise": "4.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

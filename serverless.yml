@@ -59,14 +59,27 @@ functions:
 #      - schedule: rate(10 minutes)
 #      - sns: greeter-topic
 #      - stream: arn:aws:dynamodb:region:XXXXXX:table/foo/stream/1970-01-01T00:00:00.000
+  commentParser:
+    handler: handler.commentParser
+
+      #    The following are a few example events you can configure
+      #    NOTE: Please make sure to change your handler code to work with those events
+      #    Check the event documentation for details
+    events:
+      - s3:
+          bucket: aws-lambdaserverless-comment-inbox
+          event: s3:ObjectCreated:*
+          rules:
+            - prefix: comments-
+            - suffix: .json
 
 # you can add CloudFormation resource templates here
 resources:
  Resources:
-   NewResource:
+   CreatedResource:
      Type: AWS::S3::Bucket
      Properties:
-       BucketName: aws-lambdaserverless-bl-inbox
+       BucketName: aws-lambdaserverless-bl-created
 #  Outputs:
 #     NewOutput:
 #       Description: "Description for the output"

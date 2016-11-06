@@ -41,7 +41,7 @@ functions:
 - run this ```$ sls logs -f commentParser -t``` on the terminal,
 this would allow us to watch what is being logged in the *commentParser* lambda function
 - go to your AWS S3 and locate the bucket *aws-lambdaserverless-comment-inbox* and upload the downloaded file
-- after download look at the terminal where you executed ```$ sls logs``` to see the content of the file
+- after upload look at the terminal where you executed ```$ sls logs``` to see the content of the file
 
 
 ## Note

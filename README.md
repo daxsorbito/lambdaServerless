@@ -30,14 +30,14 @@ functions:
   aws-lambdaServerless-bl-dev-commentParser: arn:aws:lambda:us-east-1:897428427632:function:aws-lambdaServerless-bl-dev-commentParser
   aws-lambdaServerless-bl-dev-getComment: arn:aws:lambda:us-east-1:897428427632:function:aws-lambdaServerless-bl-dev-getComment
   ```
-- then you would get this message when you invoke the above end point
+- then you would get this message when you invoke the above end point. Please note at the _fileUrl_ returned.
 ```js
 {
 "statusCode": 200,
 "body": "{"message":"Success! You could download the file here:","fileUrl":"https://s3.amazonaws.com/aws-lambdaserverless-bl-created/comments-be9a0f9f-5af2-4e3a-ba60-f89e21b71c54.json"}"
 }
 ```
-- download this file and store it in your local drive to be use for triggering the *commentParser* lambda function 
+- download this file by accessing the _fileUrl_ link and store the file in your local drive. This would later be uploaded to trigger the *commentParser* lambda function.
 - run this ```$ sls logs -f commentParser -t``` on the terminal,
 this would allow us to watch what is being logged in the *commentParser* lambda function
 - go to your AWS S3 and locate the bucket *aws-lambdaserverless-comment-inbox* and upload the downloaded file

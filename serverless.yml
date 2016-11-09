@@ -55,6 +55,10 @@ functions:
             parameters:
               querystrings:
                 id: true
+          response:
+            headers:
+              Content-Type: integration.response.header.Content-Type
+              Content-Disposition: integration.response.header.Content-Disposition
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
 #      - sns: greeter-topic

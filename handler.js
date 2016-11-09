@@ -27,6 +27,10 @@ module.exports.getComment = (event, context, callback) => {
       const endpoint = `https://${s3.endpoint.hostname}/${bucket}/${key}`
       const response = {
         statusCode: 200,
+        headers: {
+           "Content-Type": "application/json",
+           "Content-Disposition": `attachment; filename=${key}`
+        },
         body: JSON.stringify({
           message: 'Success! You could download the file here:',
           fileUrl: endpoint,

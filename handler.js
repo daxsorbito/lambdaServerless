@@ -31,10 +31,10 @@ module.exports.getComment = (event, context, callback) => {
            "Content-Type": "application/json",
            "Content-Disposition": `attachment; filename=${key}`
         },
-        body: JSON.stringify({
+        body: {
           message: 'Success! You could download the file here:',
           fileUrl: endpoint,
-        }),
+        }
       };
 
       callback(null, response);

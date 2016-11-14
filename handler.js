@@ -1,18 +1,19 @@
 'use strict';
-var AWS = require('aws-sdk');
-var request = require('request');
-var rp = require('request-promise');
-var bluebird = require('bluebird');
-var uuid = require('node-uuid');
 
-var s3 = bluebird.promisifyAll(new AWS.S3());
+const AWS = require('aws-sdk');
+const request = require('request');
+const rp = require('request-promise');
+const bluebird = require('bluebird');
+const uuid = require('node-uuid');
+
+const s3 = bluebird.promisifyAll(new AWS.S3());
 
 module.exports.getComment = (event, context, callback) => {
   // Call jsonplaceholder
-  rp.get('https://jsonplaceholder.typicode.com/comments/' + event.path.id)
+  rp.get(`https://jsonplaceholder.typicode.com/comments/${event.path.id}`)
   .then(function(data) {
     // Set S3 buckets and generate uuid for the key
-    const key = 'comments-' + uuid.v4() + '.json';
+    const key = `comments-${uuid.v4()}.json`;
     const bucket = 'aws-lambdaserverless-bl-created';
     const params = {
         Bucket: bucket,
